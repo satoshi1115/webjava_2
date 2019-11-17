@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>コマンド画面</title>
+</head>
+<body>
+	<form method="post" action="Result.html" th:action="@{/Result}" th:object="character">
+		<p th:text="'職業：'+ ${character.occupation}"></p>
+		<p th:text="'名前：'+ ${character.name}"></p>
+
+		<p>
+		<input type="submit" value="たたかう">
+		</p>
+	</form>
+
+</body>
+</html>
