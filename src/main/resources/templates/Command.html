@@ -5,13 +5,15 @@
 <title>コマンド画面</title>
 </head>
 <body>
-	<form method="post" action="Result.html" th:action="@{/Result}" th:object="character">
-		<p th:text="'職業：'+ ${character.occupation}"></p>
-		<p th:text="'名前：'+ ${character.name}"></p>
+	<form method="post" action="Result.html" th:action="@{/Result}"	th:object="${character}">
+		職業:
+		<p th:text="*{warrior}"></p>
+		<p th:text="*{magician}"></p>
 
-		<p>
-		<input type="submit" value="たたかう">
-		</p>
+        名前:
+		<p th:text="*{name}"></p>
+
+		<p><input type="submit" value="たたかう"></p>
 	</form>
 
 </body>

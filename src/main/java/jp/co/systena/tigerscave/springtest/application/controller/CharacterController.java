@@ -4,8 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import jp.co.systena.tigerscave.springtest.application.model.Magician;
-import jp.co.systena.tigerscave.springtest.application.model.Warrior;
+import jp.co.systena.tigerscave.springtest.application.model.CharacterForm;
 
 @Controller
 public class CharacterController {
@@ -22,11 +21,9 @@ public class CharacterController {
     /*
      * テンプレートに値を渡す内容を設定 第一引数は「変数」、第二引数は実際に渡す「オブジェクト」
      */
-    Warrior warrior = new Warrior();
-    Magician magician = new Magician();
 
-    mav.addObject("warrior", warrior);
-    mav.addObject("magician", magician);
+    CharacterForm character = new CharacterForm();
+    mav.addObject("character", character);
 
     // テンプレートファイル名を入力
     mav.setViewName("Character");
@@ -35,16 +32,20 @@ public class CharacterController {
 
   }
 
-  @RequestMapping(value = "/", method = RequestMethod.POST)
+  @RequestMapping(value = "/Command", method = RequestMethod.POST)
   public ModelAndView information(ModelAndView mav) {
 
+    if (mav != null) {
+      CharacterForm character = new CharacterForm();
+      mav.addObject("character", character);
 
-    // Viewのテンプレート名を設定
-    mav.setViewName("ListView");
+      // Viewのテンプレート名を設定
+      mav.setViewName("ListView");
+
+
+    }
 
     return mav;
-
-
 
   }
 }

@@ -7,13 +7,4 @@ public abstract class Occupation {
 
   abstract public void fight();
 
-  abstract public void getWork(String work);
-
-  abstract public void setWork(String work);
-
-  abstract public void getName(String name);
-
-  abstract public void setName(String name);
-
-
 }

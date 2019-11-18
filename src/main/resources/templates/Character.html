@@ -6,19 +6,19 @@
 </head>
 <body>
 	<h2>キャラクター作成</h2>
-	</p>
+
 	<!-- 「action」はローカルのファイルで「th:action」はweb上でのページの遷移先 -->
 	<!-- 「th:object」はコントローラークラスで指定した実際のオブジェクトを記載 -->
-	<form method="post" action="Command.html" th:action="@{/command}" th:object="${warrior}" th:object="${magician}">
+	<form method="post" action="Command.html" th:action="@{/command}" th:object="${character}">
 		<p>
-			職業: <input type="radio" name="radio1" value="戦士">戦士
-			<input type="radio" name="radio2" value="魔法使い">魔法使い
+			職業: <input type="radio" th:field = "*{warrior}">戦士
+			<input type="radio"  th:field = "*{magician}">魔法使い
 		</p>
 
 		<p>
 		<!-- 「*」はth:objectで指定した配下のデータを使用する。-->
 		<!-- th:fieldはクラスファイルにフィールド変数を記載する。 -->
-			名前： <input type="text" name="name" >
+			名前： <input type="text" th:field = "*{name}">
 		</p>
 		<p>
 			<input type="submit" value="次へ">
