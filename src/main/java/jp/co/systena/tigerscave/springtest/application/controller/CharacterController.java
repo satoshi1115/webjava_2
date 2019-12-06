@@ -1,20 +1,13 @@
 package jp.co.systena.tigerscave.springtest.application.controller;
 
-import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import jp.co.systena.tigerscave.springtest.application.model.CharacterForm;
-import jp.co.systena.tigerscave.springtest.application.model.Work;
-import jp.co.systena.tigerscave.springtest.application.service.WorkService;
 
 @Controller
 public class CharacterController {
-
-  @Autowired
-  WorkService workservice;
 
 
 
@@ -50,7 +43,6 @@ public class CharacterController {
        * オブジェクトを作成時に「new」をしているため新しい型として引き継がれる。)
        */
       CharacterForm character = new CharacterForm();
-      Map<Integer, Work> itemListMap = workservice.getworklist();
 
 
       // 変数characterオブジェクトを用いてに引数のcharacterformが持っていた値をsetさせる。
